@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="YCJG Metal AM icon">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#05080d"/>
+      <stop offset=".55" stop-color="#0b1722"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="1">
+      <stop stop-color="#e5edf4"/>
+      <stop offset=".5" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#64748b"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <path d="M88 116h336" stroke="#ef4444" stroke-width="18" stroke-linecap="square"/>
+  <circle cx="171" cy="244" r="66" fill="none" stroke="url(#metal)" stroke-width="28"/>
+  <circle cx="341" cy="244" r="66" fill="none" stroke="url(#metal)" stroke-width="28"/>
+  <circle cx="256" cy="358" r="66" fill="none" stroke="url(#metal)" stroke-width="28"/>
+  <path d="M210 245h92M196 294l38 45M316 294l-38 45" stroke="#dff9ff" stroke-width="22" stroke-linecap="round"/>
+  <path d="M118 414h276" stroke="#7dd3fc" stroke-width="10" stroke-linecap="round" opacity=".55"/>
+</svg>
