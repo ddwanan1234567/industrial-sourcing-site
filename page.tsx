@@ -16,6 +16,8 @@ type DialogState = {
 
 const email = "metalprototype.lab@gmail.com"; // Edit: primary inquiry email
 const linkedInUrl = "https://www.linkedin.com/in/ding-lilac-52384041b/"; // Edit: LinkedIn URL
+const gmailComposeUrl =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=metalprototype.lab@gmail.com&su=Drawing%20Review%20%2F%20Quote%20Request";
 
 const navItems = [
   ["Home", "home"],
@@ -294,12 +296,12 @@ function Header({ activeSection, scrolled }: { activeSection: string; scrolled: 
             </a>
           ))}
         </nav>
-        <a
-          href={`mailto:${email}?subject=Inquiry%20-%20Metal%20AM%20/%20SLM%20Project%20Review`}
+        <QuoteCta
+          mailto={`mailto:${email}?subject=Inquiry%20-%20Metal%20AM%20/%20SLM%20Project%20Review`}
           className="hidden rounded-full border border-cyan-200/25 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#071016] transition hover:border-cyan-200 hover:bg-cyan-100 sm:inline-flex"
         >
           Send Drawing
-        </a>
+        </QuoteCta>
       </div>
     </header>
   );
@@ -330,12 +332,12 @@ function Hero({ mailto }: { mailto: string }) {
           </Reveal>
           <Reveal delay={220}>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a className="premium-button" href={mailto}>
+              <QuoteCta className="premium-button" mailto={mailto}>
                 Send Drawing
-              </a>
-              <a className="ghost-button" href="#contact">
+              </QuoteCta>
+              <QuoteCta className="ghost-button" mailto={mailto}>
                 Request a Quote
-              </a>
+              </QuoteCta>
             </div>
           </Reveal>
           <div className="mt-9 flex flex-wrap gap-2">
@@ -454,9 +456,9 @@ function CapabilityGallery({ mailto }: { mailto: string }) {
             <p className="max-w-2xl text-sm leading-7 text-white/58">
               Have a similar metal part requirement? Send files, material, quantity and application notes for review.
             </p>
-            <a className="premium-button shrink-0" href={mailto}>
+            <QuoteCta className="premium-button shrink-0" mailto={mailto}>
               Request a Similar Part Quote
-            </a>
+            </QuoteCta>
           </div>
         </Reveal>
       </div>
@@ -591,9 +593,9 @@ function FinalCta({ mailto }: { mailto: string }) {
               Send your drawing, material requirement, or part idea. We&apos;ll help coordinate manufacturability review and quotation direction.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a className="premium-button" href={mailto}>
+              <QuoteCta className="premium-button" mailto={mailto}>
                 Email Your Project
-              </a>
+              </QuoteCta>
               <a className="ghost-button" href={linkedInUrl} target="_blank" rel="noreferrer">
                 Contact on LinkedIn
               </a>
@@ -742,12 +744,12 @@ function DetailDialog({ dialog, onClose }: { dialog: DialogState; onClose: () =>
 function FloatingActions({ mailto, scrolled }: { mailto: string; scrolled: boolean }) {
   return (
     <>
-      <a
-        href={mailto}
+      <QuoteCta
+        mailto={mailto}
         className="fixed bottom-8 right-8 z-30 hidden border border-cyan-200/30 bg-cyan-100 px-5 py-3 text-xs font-black uppercase tracking-[0.2em] text-[#061016] shadow-[0_18px_60px_rgba(34,211,238,0.22)] transition hover:bg-white lg:inline-flex"
       >
         Send Drawing
-      </a>
+      </QuoteCta>
       {scrolled ? (
         <a
           href="#home"
@@ -756,13 +758,41 @@ function FloatingActions({ mailto, scrolled }: { mailto: string; scrolled: boole
           Back to top
         </a>
       ) : null}
-      <a
-        href={mailto}
+      <QuoteCta
+        mailto={mailto}
         className="fixed inset-x-4 bottom-4 z-30 rounded-full bg-cyan-100 px-5 py-4 text-center text-xs font-black uppercase tracking-[0.2em] text-[#061016] shadow-[0_18px_60px_rgba(34,211,238,0.24)] lg:hidden"
       >
         Send Drawing
-      </a>
+      </QuoteCta>
     </>
+  );
+}
+
+function QuoteCta({
+  children,
+  className,
+  mailto
+}: {
+  children: React.ReactNode;
+  className: string;
+  mailto: string;
+}) {
+  return (
+    <a
+      className={className}
+      href={mailto}
+      onClick={(event) => {
+        event.preventDefault();
+        const composeWindow = window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
+        if (!composeWindow) {
+          window.location.href = mailto;
+        }
+      }}
+      rel="noreferrer"
+      target="_blank"
+    >
+      {children}
+    </a>
   );
 }
 
