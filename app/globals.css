@@ -82,12 +82,39 @@ a {
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  text-align: center;
+  white-space: normal;
   transition:
     transform 220ms ease,
     background 220ms ease,
     border-color 220ms ease,
     color 220ms ease,
     box-shadow 220ms ease;
+}
+
+.case-highlight-card {
+  min-height: 26rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    radial-gradient(circle at 82% 14%, rgba(125, 211, 252, 0.12), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    #081018;
+  padding: 1.5rem;
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    background 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.case-highlight-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(165, 243, 252, 0.36);
+  background:
+    radial-gradient(circle at 82% 14%, rgba(125, 211, 252, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.026)),
+    #09121b;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34);
 }
 
 .premium-button {
@@ -329,6 +356,176 @@ a {
   left: 38%;
   bottom: 22%;
   transform: rotate(84deg);
+}
+
+.gallery-card {
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.018)),
+    #081018;
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(165, 243, 252, 0.36);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+}
+
+.gallery-visual {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 42% 38%, rgba(255, 255, 255, 0.22), transparent 24%),
+    radial-gradient(circle at 80% 18%, rgba(125, 211, 252, 0.18), transparent 34%),
+    linear-gradient(135deg, #111827, #05080d 64%);
+}
+
+.gallery-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: radial-gradient(circle at 52% 42%, black, transparent 72%);
+}
+
+.gallery-visual::after {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border: 1px solid rgba(226, 232, 240, 0.16);
+  transform: skewX(-12deg) rotate(-6deg);
+}
+
+.gallery-scan {
+  position: absolute;
+  left: -20%;
+  top: 30%;
+  z-index: 4;
+  width: 140%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.82), rgba(248, 113, 113, 0.74), transparent);
+  opacity: 0.74;
+  transform: rotate(-10deg);
+  transition: transform 500ms ease;
+}
+
+.gallery-card:hover .gallery-scan {
+  transform: translateY(82px) rotate(-10deg);
+}
+
+.gallery-part {
+  position: absolute;
+  z-index: 3;
+  border: 1px solid rgba(226, 232, 240, 0.68);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.95), rgba(203, 213, 225, 0.45) 24%, rgba(30, 41, 59, 0.86) 66%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.38), rgba(15, 23, 42, 0.18));
+  box-shadow:
+    inset 0 0 24px rgba(255, 255, 255, 0.1),
+    0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.gallery-part-a {
+  left: 20%;
+  top: 24%;
+  width: 42%;
+  height: 36%;
+  border-radius: 999px;
+  transform: rotate(-18deg);
+}
+
+.gallery-part-b {
+  right: 18%;
+  top: 28%;
+  width: 24%;
+  height: 42%;
+  border-radius: 999px 999px 8px 8px;
+  transform: rotate(18deg);
+}
+
+.gallery-part-c {
+  left: 36%;
+  bottom: 20%;
+  width: 38%;
+  height: 12%;
+  border-radius: 999px;
+  transform: rotate(28deg);
+}
+
+.gallery-grid {
+  position: absolute;
+  inset: 30% 24% 24% 28%;
+  z-index: 4;
+  background:
+    linear-gradient(45deg, transparent 46%, rgba(165, 243, 252, 0.72) 48%, rgba(165, 243, 252, 0.72) 52%, transparent 54%),
+    linear-gradient(-45deg, transparent 46%, rgba(165, 243, 252, 0.45) 48%, rgba(165, 243, 252, 0.45) 52%, transparent 54%);
+  background-size: 22px 22px;
+  opacity: 0.38;
+  mask-image: radial-gradient(ellipse at center, black, transparent 68%);
+}
+
+.gallery-titanium {
+  background:
+    radial-gradient(circle at 38% 36%, rgba(226, 232, 240, 0.3), transparent 24%),
+    linear-gradient(135deg, #1f2937, #0a1018 64%);
+}
+
+.gallery-stainless {
+  background:
+    radial-gradient(circle at 60% 35%, rgba(241, 245, 249, 0.28), transparent 28%),
+    linear-gradient(135deg, #26313d, #071016 70%);
+}
+
+.gallery-copper {
+  background:
+    radial-gradient(circle at 56% 42%, rgba(251, 146, 60, 0.28), transparent 26%),
+    linear-gradient(135deg, #2b1511, #071016 66%);
+}
+
+.gallery-aluminum {
+  background:
+    radial-gradient(circle at 42% 42%, rgba(209, 213, 219, 0.24), transparent 26%),
+    linear-gradient(135deg, #172033, #071016 70%);
+}
+
+.gallery-medical {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(103, 232, 249, 0.2), transparent 30%),
+    linear-gradient(135deg, #0f1f24, #071016 70%);
+}
+
+.gallery-marine {
+  background:
+    radial-gradient(circle at 62% 32%, rgba(56, 189, 248, 0.28), transparent 26%),
+    linear-gradient(135deg, #0b1d2b, #061016 68%);
+}
+
+.gallery-finish {
+  background:
+    radial-gradient(circle at 46% 34%, rgba(255, 255, 255, 0.3), transparent 22%),
+    linear-gradient(135deg, #1f2937, #0f1115 70%);
+}
+
+.gallery-inspection {
+  background:
+    radial-gradient(circle at 45% 40%, rgba(248, 113, 113, 0.2), transparent 24%),
+    linear-gradient(135deg, #1a202c, #080c12 68%);
+}
+
+.gallery-samples {
+  background:
+    radial-gradient(circle at 52% 36%, rgba(165, 243, 252, 0.2), transparent 28%),
+    linear-gradient(135deg, #16202a, #05080d 70%);
 }
 
 .case-card {

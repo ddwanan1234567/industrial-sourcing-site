@@ -10,9 +10,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("ycjg-metal-am-v1").then((cache) =>
       cache.addAll([
-        "/manifest.json",
-        "/manifest.webmanifest",
-        "/icon.svg"
+        "manifest.json",
+        "manifest.webmanifest",
+        "icon.svg"
       ])
     ).then(() => self.skipWaiting())
   );
@@ -20,7 +20,7 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("fetch", (event) => {
   if (event.request.mode === "navigate") {
-    event.respondWith(fetch(event.request).catch(() => caches.match("/index.html")));
+    event.respondWith(fetch(event.request).catch(() => caches.match("index.html")));
     return;
   }
 

@@ -1,18 +1,19 @@
-# YCJG Metal Additive Manufacturing Website
+# Metal Prototype Lab Website
 
-One-page industrial B2B landing page for international LPBF / SLM metal additive manufacturing inquiries.
+One-page industrial B2B landing page for Metal Prototype Lab, supporting international inquiry and project coordination for YCJG Metal Additive Manufacturing.
 
 ## What Is Included
 
 - Premium dark industrial landing page
 - Responsive one-page navigation
 - Sticky header with active section state
-- Desktop floating `Send Drawing` CTA
+- Mobile menu with section links
+- Desktop floating `Send CAD for Review` CTA
 - Mobile sticky bottom CTA
 - Lightweight animated hero scene inspired by metal AM geometry, powder particles, and laser scan lines
-- Capability, material, and application detail modals
-- Quotation checklist and contact CTA
-- SEO metadata for LPBF / SLM precision parts inquiry
+- Clickable case, gallery, capability, material, and application detail modals
+- Interactive quotation checklist with a generated email CTA
+- SEO metadata for SLM / LPBF metal 3D printing and precision parts inquiry
 
 ## Edit Points
 
@@ -58,12 +59,16 @@ npm install framer-motion three @react-three/fiber @react-three/drei
 
 In this workspace, network access to npm was blocked during setup, so the first version uses a lightweight CSS/React industrial 3D-style hero that works without downloading extra packages. After installing the packages above, the hero can be upgraded to a true React Three Fiber scene without changing the page structure.
 
-## Deploy To Vercel
+## Deploy To GitHub Pages
 
 1. Push this folder to GitHub.
-2. Import the repo into Vercel.
-3. Use the default Next.js settings.
-4. Add any future environment variables only if needed.
+2. In the repository settings, enable GitHub Pages from GitHub Actions.
+3. The workflow in `.github/workflows/pages.yml` builds the static site automatically.
+4. The published URL will use the repository path, for example:
+
+```text
+https://ddwanan1234567.github.io/industrial-sourcing-site/
+```
 
 No backend is required for this version.
 
